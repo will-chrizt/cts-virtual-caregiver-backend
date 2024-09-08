@@ -2,6 +2,8 @@ const config = require("./utils/config");
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const usersRouter = require("./controllers/users");
+
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
@@ -25,6 +27,8 @@ app.use(middleware.requestLogger);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+app.use("/api/users", usersRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
