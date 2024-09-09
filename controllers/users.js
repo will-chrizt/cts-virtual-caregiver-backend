@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const validator = require("email-validator");
 const usersRouter = require("express").Router();
 const User = require("../models/user");
 
@@ -14,6 +15,10 @@ usersRouter.post("/", async (request, response, next) => {
     email,
     passwordHash,
   });
+
+  if (!validator.validate(email)) {
+    return response.status(400).json({ error: "invalid email" });
+  }
 
   try {
     const savedUser = await user.save();
