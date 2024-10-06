@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/api/users", usersRouter);
+app.use("/api/signup", usersRouter);
 app.use("/api/login", loginRouter);
 
 app.use(middleware.unknownEndpoint);
