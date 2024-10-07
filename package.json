@@ -1,5 +1,6 @@
-{
+"build": "react-scripts build"{
   "scripts": {
+    "build": "react-scripts build"
     "start": "NODE_ENV=production node index",
     "dev": "NODE_ENV=development nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
