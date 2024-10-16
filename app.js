@@ -2,7 +2,7 @@ const config = require("./utils/config");
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const usersRouter = require("./controllers/users");
+const signupRouter = require("./controllers/signup");
 const loginRouter = require("./controllers/login");
 
 const middleware = require("./utils/middleware");
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/api/signup", usersRouter);
+app.use("/api/signup", signupRouter);
 app.use("/api/login", loginRouter);
 
 app.use(middleware.unknownEndpoint);
