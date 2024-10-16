@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "build": "react-scripts build"
-    "start": "NODE_ENV=production node index",
-    "dev": "NODE_ENV=development nodemon index",
+    "build": "react-scripts build",
+    "start": "node index",
+    "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
