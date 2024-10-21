@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const signupRouter = require("./controllers/signup");
 const loginRouter = require("./controllers/login");
+const uploadRouter = require("./controllers/upload");
 
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/signup", signupRouter);
 app.use("/api/login", loginRouter);
+app.use("/api/upload", uploadRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
